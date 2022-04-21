@@ -1,19 +1,22 @@
-class Animal( var especie: String){
-    var fala:String =""
-    init {
-       if (especie =="dog"){
-            fala ="au-au"
-        }else if(especie == "gato"){
-            fala = "miauu"
-        }else{
-            ""
-       }
-    }
-    fun falar(){
-        println(fala)
-    }
+enum class Prioridade(val valores: Int){
+    Baixa(1){
+        override fun toString(): String {
+            return "Prioridade baixa: $valores "
+        }
+            },
+    Media(2),
+    Alta(3)
+}
+
+enum class AnimalEnum{
+    Dog, Gato, Boi
+}
+
+fun x ( p: Prioridade){
+
 }
 fun main(){
-     Animal("dog").falar()
-
+    for(p in Prioridade.values()){
+        println(p)
+    }
 }
